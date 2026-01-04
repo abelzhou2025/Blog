@@ -1,23 +1,34 @@
 export const SITE = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
-  author: "Sat Naing",
-  profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
+  // 线上博客完整地址，仓库名大写 Blog，结尾保留斜杠
+  website: "https://abelzhou2025.github.io/Blog/",
+
+  author: "Abel Zhou",
+
+  // About 页的完整地址，建议基于 website 拼出来，避免将来改域名时漏改
+  profile: "https://abelzhou2025.github.io/Blog/about",
+
+  desc: "Abel's blog.",
+  title: "Abel's Blog",
   ogImage: "astropaper-og.jpg",
+
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
+
   showArchives: true,
   showBackButton: true, // show back button in post detail
+
   editPost: {
     enabled: true,
     text: "Edit page",
-    url: "https://github.com/satnaing/astro-paper/edit/main/",
+    // 这里通常放「在 GitHub 上编辑此页」的链接，你现在先指向博客首页也可以
+    url: "https://abelzhou2025.github.io/Blog/",
   },
+
   dynamicOgImage: true,
-  dir: "ltr", // "rtl" | "auto"
-  lang: "en", // html lang code. Set this empty and default will be "en"
-  timezone: "Asia/Bangkok", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+  dir: "ltr",          // "rtl" | "auto"
+  lang: "en",          // html lang code
+  timezone: "Asia/Bangkok", // IANA timezone
 } as const;
