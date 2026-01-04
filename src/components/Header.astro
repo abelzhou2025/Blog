@@ -40,7 +40,7 @@ const isActive = (path: string) => {
       class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6"
     >
       <a
-    href="https://abelzhou2025.github.io/Blog/"
+    href="/"
     class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
   >
     {SITE.title}
@@ -105,14 +105,14 @@ const isActive = (path: string) => {
           }
           <li class="col-span-1 flex items-center justify-center">
             <LinkButton
-              href="/search"
-              class:list={[
-                "focus-outline flex p-3 sm:p-1",
-                { "[&>svg]:stroke-accent": isActive("/search") },
-              ]}
-              ariaLabel="search"
-              title="Search"
-            >
+                  href="/search"
+                  class:list={[
+                    "focus-outline flex p-3 sm:p-1",
+                    { "[&>svg]:stroke-accent": isActive("/search") },
+                  ]}
+                  ariaLabel="search"
+                  title="Search"
+                >
               <IconSearch />
               <span class="sr-only">Search</span>
             </LinkButton>

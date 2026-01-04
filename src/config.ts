@@ -9,7 +9,7 @@ export const SITE = {
 
   desc: "Abel's blog.",
   title: "Abel's Blog",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "/astropaper-og.jpg",
 
   lightAndDarkMode: true,
   postPerIndex: 4,
