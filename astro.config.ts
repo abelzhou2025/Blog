@@ -13,7 +13,8 @@ import { SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE.website,
+  site: 'https://abelzhou2025.github.io',
+  base: '/Blog',
   integrations: [
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
