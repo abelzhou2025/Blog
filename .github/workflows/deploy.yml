@@ -1,19 +1,15 @@
 name: Deploy to GitHub Pages
 
 on:
-  # 每次推送到 main 分支时触发
   push:
     branches: [ main ]
-  # 在 Actions 页可以手动运行
   workflow_dispatch:
 
-# 允许这个 workflow 访问 Pages 相关权限
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 只允许一个部署在同一时间运行
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -27,10 +23,9 @@ jobs:
 
       - name: Install, build, and upload your site
         uses: withastro/action@v5
-        with:
-          # 如果你的 Astro 项目就在仓库根目录，这里不用写
-          # 如果以后放在子目录，比如 ./site，可以在这里加 path
-          # path: .
+        # 如果项目就在仓库根目录，下面这行可以省略；保留注释即可
+        # with:
+        #   path: .
 
   deploy:
     needs: build
