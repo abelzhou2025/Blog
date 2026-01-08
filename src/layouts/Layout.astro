@@ -20,6 +20,19 @@ const { title = SITE.title, author = SITE.author, profile = SITE.profile, descri
 
 const socialImageURL = new URL(ogImage, Astro.url);
 
+// Helper function to get correct path with base URL
+const getPath = (path: string) => {
+  // If path is already absolute with base, return as is
+  if (path.startsWith('/Blog/')) return path;
+  
+  // If path starts with /, prepend /Blog
+  if (path.startsWith('/')) {
+    return `/Blog${path}`;
+  }
+  
+  return path;
+};
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -101,7 +114,7 @@ const structuredData = {
       rel="alternate"
       type="application/rss+xml"
       title={SITE.title}
-      href={new URL("rss.xml", Astro.site)}
+      href={new URL(getPath("/rss.xml"), Astro.site)}
     />
 
     <meta name="theme-color" content="" />
