@@ -46,9 +46,20 @@ const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
   document.addEventListener("astro:page-load", () => {
     const mainContent: HTMLElement | null =
       document.querySelector("#main-content");
-    const backUrl = mainContent?.dataset?.backurl;
-    if (backUrl) {
-      sessionStorage.setItem("backUrl", backUrl);
+    const currentUrl = mainContent?.dataset?.backurl;
+    
+    // Get the previous backUrl from sessionStorage (this is the actual "go back" URL)
+    const previousBackUrl = sessionStorage.getItem("backUrl");
+    
+    // Store current URL as the new backUrl for the next page
+    if (currentUrl) {
+      sessionStorage.setItem("backUrl", currentUrl);
+    }
+    
+    // If this is the first page visit, set backUrl to home
+    if (!previousBackUrl && currentUrl && currentUrl !== "/") {
+      // For non-home pages on first visit, set backUrl to home
+      sessionStorage.setItem("backUrl", "/");
     }
   });
 </script>

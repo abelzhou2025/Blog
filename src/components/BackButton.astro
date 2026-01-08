@@ -2,6 +2,19 @@
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
+
+// Helper function to get correct path with base URL
+const getPath = (path: string) => {
+  // If path is already absolute with base, return as is
+  if (path.startsWith('/Blog/')) return path;
+  
+  // If path starts with /, prepend /Blog
+  if (path.startsWith('/')) {
+    return `/Blog${path}`;
+  }
+  
+  return path;
+};
 ---
 
 {
@@ -9,7 +22,7 @@ import { SITE } from "@/config";
     <div class="mx-auto flex w-full max-w-app items-center justify-start px-2">
       <LinkButton
         id="back-button"
-        href={import.meta.env.BASE_URL + "/"}
+        href={getPath("/")}
         class="focus-outline mt-8 mb-2 flex hover:text-foreground/75"
       >
         <IconChevronLeft class="inline-block size-6 rtl:rotate-180" />
