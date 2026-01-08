@@ -2,7 +2,7 @@
 title: First Blog Post
 author: Abel
 pubDatetime: 2026-01-04T03:42:51Z
-slug: how-do-i-develop-my-terminal-portfolio-website-with-react
+slug: first-blog-post
 featured: false
 draft: false
 tags:
